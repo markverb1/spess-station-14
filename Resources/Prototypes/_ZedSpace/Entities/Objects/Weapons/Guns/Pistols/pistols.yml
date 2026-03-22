@@ -1,0 +1,43 @@
+- type: entity
+  name: M1911
+  parent: [BaseWeaponPistol, BaseSecurityContraband]
+  id: WeaponPistolM1911
+  description: Boy, this pistol survived 2 world wars. Chambered in .45, the lord’s caliber, it can blast the lung right out of the body. Feeds from .45 pistol magazines.
+  components:
+  - type: Sprite
+    sprite: _ZedSpace/Objects/Weapons/Guns/Pistols/M1911.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Pistols/M1911.rsi
+  - type: Gun
+    minAngle: 1
+    maxAngle: 10
+    angleIncrease: 4
+    angleDecay: 3
+    fireRate: 5
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineMagnum
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol

@@ -1,0 +1,24 @@
+- type: reagent
+  id: Sproke
+  name: Sproke
+  parent: BaseSoda
+  desc: Sproke® is a delicious soft drink made simply by mixing together Smite and Cola, and it is enjoyed by many soyjaks around the world.
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: sproke
+  color: "#82573b"
+  recognizable: true
+  metamorphicSprite:
+    sprite: _ZedSpace/Objects/Consumable/Drinks/sprokeglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrowsiness
+        time: 1
+        type: Remove

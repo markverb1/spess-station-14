@@ -1,0 +1,17 @@
+- type: tile
+  id: ZSFloorGrass
+  name: "zombie grass"
+  sprite: /Textures/_ZedSpace/Tiles/grass.png
+  variants: 5
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  baseTurf: FloorDirt
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepGrass
+  heatCapacity: 10000
+  weather: true

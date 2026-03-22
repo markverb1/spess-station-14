@@ -1,0 +1,127 @@
+- type: entity
+  abstract: true
+  parent: [ BaseCartridge, BaseSecurityContraband ]
+  id: BaseCartridge45ACP
+  name: cartridge (.45 ACP)
+  components:
+  - type: Tag
+    tags:
+      - CartridgePistol
+  - type: CartridgeAmmo
+    proto: BulletPistol
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+
+- type: entity
+  parent: BaseCartridge45ACP
+  id: Cartridge45ACP
+  name: cartridge (.45 ACP)
+  description: The lord’s cartridge. Standard kinetic ammunition is common and useful in most situations.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletPistol
+
+- type: entity
+  parent: BaseCartridge45ACP
+  id: Cartridge45ACPPractice
+  name: cartridge (.45 ACP practice)
+  description: The lord’s cartridge. Practice ammunition fires a chalk projectile that stings a little, but otherwise causes no lasting damage.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletPistolPractice
+  -  type: Sprite
+     layers:
+       - state: base
+         map: [ "enum.AmmoVisualLayers.Base" ]
+       - state: tip
+         map: [ "enum.AmmoVisualLayers.Tip" ]
+         color: "#dbdbdb"
+
+- type: entity
+  parent: BaseCartridge45ACP
+  id: Cartridge45ACPIncendiary
+  name: cartridge (.45 ACP incendiary)
+  description: The lord’s cartridge. Incendiary ammunition contains a self-igniting compound that sets targets ablaze.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletPistolIncendiary
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#ff6e52"
+
+- type: entity
+  id: Cartridge45ACPUranium
+  name: cartridge (.45 ACP uranium)
+  description: The lord’s cartridge. Uranium ammunition replaces the lead core of the bullet with fissile material, irradiating targets from the inside.
+  parent: BaseCartridge45ACP
+  components:
+  - type: CartridgeAmmo
+    proto: BulletPistolUranium
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#65fe08"
+
+- type: entity
+  id: Cartridge45ACPAP
+  name: cartridge (.45 ACP AP)
+  description: The lord’s cartridge. Armor-piercing ammo improves performance against armored targets.
+  parent: BaseCartridge45ACP
+  components:
+  - type: CartridgeAmmo
+    proto: BulletPistolUranium
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#65fe08"
+
+- type: entity
+  id: Cartridge45ACPHP
+  name: cartridge (.45 ACP HP)
+  description: The lord’s cartridge. Uranium ammunition replaces the lead core of the bullet with fissile material, irradiating targets from the inside.
+  parent: BaseCartridge45ACP
+  components:
+  - type: CartridgeAmmo
+    proto: BulletPistolUranium
+  - type: Sprite
+    layers:
+      - state: base
+        map: [ "enum.AmmoVisualLayers.Base" ]
+      - state: tip
+        map: [ "enum.AmmoVisualLayers.Tip" ]
+        color: "#65fe08"
+
+- type: entity
+  parent: BaseCartridge45ACP
+  id: Cartridge45ACPSpent
+  name: cartridge (.45 ACP)
+  suffix: spent
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base-spent
+      map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+  - type: CartridgeAmmo
+    proto: BulletPistol
+    spent: true
+  - type: Tag
+    tags:
+    - CartridgePistol
+    - Trash # surely theres a way to automatically add this...
